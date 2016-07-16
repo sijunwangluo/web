@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js例子讲解</title>
+</head>
+<body>
+
+<!--如果用户输入大于5的数，网页输入大了-->
+<script type="text/javascript">
+    function ifelse(){
+    var input=prompt("请输入1到10之前的数字");
+    if(input>5){
+        document.write("输入的数大于5");
+
+    }else{
+        document.write("你输入的数字是"+input);
+    }}
+</script>
+
+<button onclick="ifelse()">ifelse</button>
+
+<hr>
+
+<p id="one" class="one">样式会改变哦</p>
+
+<style type="text/css">
+    .one{
+        color: red;
+    }
+    .two{
+        color:blue;
+    }
+</style>
+<!--改变样式-->
+<script type="text/javascript">
+    function cclassName(){
+        var p_one=document.getElementById("one");
+
+        p_one.className="two";
+    }
+
+</script>
+
+<button onclick="cclassName()">改变样式</button>
+
+<hr>
+<button onclick="alertt()">警告</button>
+<button onclick="confirmm()">确认</button>
+<button onclick="promptt()">提问</button>
+<script type="text/javascript">
+    function alertt(){
+        alert("警告");
+    }
+    function confirmm(){
+    var con=confirm();
+        document.write(con);
+    }
+    function promptt(){
+        prompt();
+    }
+</script>
+
+
+<hr>
+
+
+
+
+
+
+</body>
+</html>
