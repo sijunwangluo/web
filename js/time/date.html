@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date</title>
+</head>
+<body>
+<div class="content">
+    <div id="show">显示时间的位置</div>
+</div>
+<script language="JavaScript" type="text/javascript">
+    window.onload=function(){
+        showtime();
+    }
+      function chenkTime(i){
+          if(i<10){
+              i="0"+i;
+              return i;
+          }else {
+              return i;
+          }
+      }
+
+
+       function showtime(){
+           var  myDate=new Date();
+           var year=myDate.getFullYear();
+           var month=myDate.getMonth()+1;
+           var date=myDate.getDate();
+           var arr=Array('星期日','星期一','星期二','星期三','星期四','星期五','星期六');
+           var hour=myDate.getHours();
+           var minutes=myDate.getMinutes();
+           var second=myDate.getSeconds();
+           hour=chenkTime(hour);
+           minutes=chenkTime(minutes);
+           second=chenkTime(second);
+           document.getElementById("show").innerHTML=year+
+                   "年"+month+"月"+date+"日"+arr[myDate.getDay()]+hour+':'+minutes+':'+second;
+           setTimeout(showtime, 500);
+       }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

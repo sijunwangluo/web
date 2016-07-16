@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>限时购</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    setInterval(function(){
+        var curtime=new Date();
+        var  endtime=new Date("2016/7/7,0:58:00");
+        var lefttime=Math.ceil((endtime.getTime()-curtime.getTime())/1000);
+
+        console.log(lefttime);
+        if(lefttime==0){
+            alert("秒杀开始！");
+        }
+    },500);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+</head>
+<body>
+<div id="show"></div>
+<script type="text/javascript">
+    var curtime=new Date();
+    var  endtime=new Date("2016,8,8");
+    var lefttime=Math.ceil((endtime.getTime()-curtime.getTime())/(24*60*60*1000));
+    alert(lefttime);
+</script>
+</body>
+</html>

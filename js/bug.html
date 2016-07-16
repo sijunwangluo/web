@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        #div1 {
+            height: 200px;
+            width: 200px;
+            background: #F00;
+            border: 2px solid #DDDDDD;
+            font-size: 12px;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<head>
+    <!--<div id="div1" style=" width: 200px;"></div>-->
+    <!--<script type="text/javascript">-->
+        <!--window.onload=function(){-->
+
+            <!--setInterval(function(){-->
+                <!--var odiv=document.getElementById("div1");-->
+                <!--odiv.style.width=parseInt(odiv.style.width)-1+"px";-->
+
+            <!--},30)-->
+
+        <!--}-->
+    <!--</script>-->
+
+    <div id="div1" style=" width: 200px;">hello</div>
+    <script type="text/javascript">
+
+
+
+
+
+
+        //获取样式
+        function getStyle(obj,attr){
+            if(obj.currentStyle){
+                return obj.currentStyle[attr];
+            }else{
+                return getComputedStyle(obj,false)[attr];
+            }
+        }
+        window.onload=function(){
+
+            setInterval(function(){
+                var odiv=document.getElementById("div1");
+                odiv.style.width=parseInt(getStyle(odiv,"width"))-1+"px";
+                odiv.style.fontSize=parseInt(getStyle(odiv,"fontSize"))+1;
+            },30)
+
+        }
+    </script>
+</head>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .share{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position:relative;
+            top:100px;
+            left: -200px;
+
+        }
+        .bar{
+            width: 20px;
+            height: 40px;
+            background: #DDDDDD;
+            position: absolute;
+            right: -20px;
+            top: 160px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="share" id="share"><div class="bar">分享</div></div>
+<script>
+    window.onload=function(){
+        var odiv=document.getElementById("share");
+        odiv.onmouseover=function(){
+            startMove(0);
+        }
+        odiv.onmouseout=function(){
+            startMove(-200);
+        }
+
+    }
+    var timer=null;
+
+    function startMove(target){
+        clearInterval(timer);
+        var odiv=document.getElementById("share");
+        timer=setInterval(function(){
+
+            var speed=(target-odiv.offsetLeft)/20;
+            speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+            if(odiv.offsetLeft == target){
+                clearInterval(timer);
+            }else{
+                odiv.style.left=odiv.offsetLeft+speed+"px";
+            }
+            console.log(odiv.offsetLeft);
+            console.log(speed);
+
+        },30)
+    }
+
+</script>
+
+</body>
+</html>

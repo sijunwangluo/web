@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>同时动画</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        div{
+            height: 100px;
+            width: 100px;
+            background: red;
+
+            filter:alpha(opacity:30);
+            opacity:0.3;
+        }
+    </style>
+    <script src="movee.js"></script>
+</head>
+<body>
+<div id="div1"></div>
+<script type="text/javascript">
+    window.onload=function(){
+        var li=document.getElementById('div1');
+        li.onmouseover=function() {
+            console.log(1);
+            startMove(li,{width:400,height:400,opacity:100});
+        }
+        li.onmouseout=function() {
+
+            startMove(li,{width:100,height:100,opacity:100})
+        }
+    }
+</script>
+</body>
+</html>
