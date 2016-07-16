@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象与DOM对象</title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            var p = document.getElementById('wanglijun');
+            console.log(p);
+            p.innerHTML="码狼时代，人人都可以学习编程！"
+            p.style.color='red';
+        }
+
+
+    </script>
+    <script>
+        $(document).ready(
+                function(){
+                    $('#malangshidai').html("学习编程，来码狼时代！").css('color','red');
+                }
+        );
+    </script>
+
+</head>
+<body>
+<div id="wanglijun"></div>
+<div id="malangshidai"></div>
+</body>
+</html>
